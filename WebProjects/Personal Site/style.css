@@ -17,8 +17,10 @@
     gap: 100px;
     /* background: linear-gradient(300deg, #000B4F, #20368F, #20368F);
     background-size: 100% 100%; */
-    border: 1px solid cyan
-    
+    border: 1px solid cyan;
+    position: fixed;
+    width: 100%;
+    background-color: black;
     
 }
 
@@ -34,6 +36,11 @@
     
 }
 
+.navbar-hide {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
 .gradient-background {
     /* background: linear-gradient(300deg, #000B4F, #20368F, #829CD0); */
     /* background: linear-gradient(300deg, #000B4F, #20368F, #20368F);
@@ -48,7 +55,7 @@
         font-size: 20px;
     }
     .gradient-background {
-        height: 110vh;
+        height: 100%;
     }
 
     #AboutMe img {
@@ -70,7 +77,7 @@
 
 @media (min-width: 481px) and (max-width: 1200px) {
     .gradient-background {
-        height: 120vh;
+        height: 100%;
     }
     .navbar {
         gap: 30px;
@@ -84,7 +91,7 @@
     #AboutMe img {
         width: 200px;
         height: 200px;
-        margin-right: 2px;
+        margin-left: 50px;
     }
 }
 
@@ -103,6 +110,10 @@
 .responsive-logo {
     width: 100px;  
     height: auto;
+}
+
+#Projects {
+    border: 1px solid cyan;
 }
 
 /** Space effect created below */
