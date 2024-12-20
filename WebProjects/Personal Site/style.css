@@ -15,21 +15,22 @@
     padding: 25px;
     justify-content: center;
     gap: 100px;
-    background: linear-gradient(300deg, #000B4F, #20368F, #20368F);
-    background-size: 100% 100%;
+    /* background: linear-gradient(300deg, #000B4F, #20368F, #20368F);
+    background-size: 100% 100%; */
+    border: 1px solid cyan
     
     
 }
 
 .navbar a {
-    color: white;
+    color: black;
     width: 100px;
     height: 30px;
     text-decoration: none;
     text-align: center;
     border-radius: 10%;
     border-color: #000B4F;
-    background-color: #20368F;
+    background-color: cyan;
     
 }
 
@@ -37,7 +38,54 @@
     /* background: linear-gradient(300deg, #000B4F, #20368F, #829CD0); */
     /* background: linear-gradient(300deg, #000B4F, #20368F, #20368F);
     background-size: 100% 100%; */
-    height: 120vh;
+    height: 100vh;
+    border: 1px solid cyan
+}
+
+
+@media (min-width: 319px) and (max-width: 480px) {
+    .lead {
+        font-size: 20px;
+    }
+    .gradient-background {
+        height: 110vh;
+    }
+
+    #AboutMe img {
+        height: 100px;
+        width: 100px;
+        margin-top: 20px;
+        
+
+    }
+    #java-logo {
+        border: px solid green;
+        border-radius: 10%;
+    }
+    .navbar {
+        gap: 30px;
+        
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+    .gradient-background {
+        height: 120vh;
+    }
+    .navbar {
+        gap: 30px;
+        
+    }
+    #AboutMe img {
+        margin-left: 70px;
+    }
+}
+@media (min-width: 1201px) {
+    #AboutMe img {
+        width: 200px;
+        height: 200px;
+        margin-right: 2px;
+    }
 }
 
 .container {
@@ -49,16 +97,12 @@
 
 #AboutMe {
     color: white;
-    
+    border: 1px solid cyan
 }
 
 .responsive-logo {
     width: 100px;  
     height: auto;
-}
-
-#Contact {
-
 }
 
 /** Space effect created below */
