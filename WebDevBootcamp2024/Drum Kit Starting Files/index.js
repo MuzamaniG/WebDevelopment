@@ -1,6 +1,7 @@
+//Array of buttons with corresponding sounds
 const buttons = document.querySelectorAll(".drum");
 
-// Adds clicked notification to each button
+// Adds sound to each button
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function() {
         switch(this.innerHTML) {
@@ -29,12 +30,11 @@ for (var i = 0; i < buttons.length; i++) {
                 var crash = new Audio("sounds/crash.mp3");
                 crash.play();
                 break;
-            
-
             case "l": 
                 var kick = new Audio("sounds/kick-bass.mp3");
                 kick.play();
                 break;
+            default: console.log(this.innerHTML);
         }
     })
 }
