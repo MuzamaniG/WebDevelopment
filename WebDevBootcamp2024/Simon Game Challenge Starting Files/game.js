@@ -3,6 +3,7 @@
 var buttonColors = ["red", "blue", "green", "yellow"];
 /** Pattern given by game */
 var gamePattern = [];
+/** Pattern given by user */
 var userClickedPattern = [];
 
 
@@ -32,7 +33,11 @@ function playSound(name) {
 
 /** Animates button based on press */
 function animatePress(currentColor) {
-    $("#" + currentColor).classList.add("pressed");
+    $("#" + currentColor).addClass("pressed");
+    setTimeout(function() {
+        $("#" + currentColor).removeClass("pressed");
+    }, 100)
+    
 }
 
 
