@@ -17,6 +17,15 @@ $(document).on('keydown', function() {
     }
 })
 
+function checkAnswer(currentLevel) {
+    if (userClickedPattern[currentLevel] == gamePattern[currentLevel]) {
+        console.log("success");
+    }
+    else {
+        console.log("wrong");
+    }
+}
+
 /** Decides the next sequence */
 function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 4);
@@ -35,6 +44,7 @@ $(".btn").click(function() {
     userClickedPattern.push(userChosenColor);
     animatePress(userChosenColor);
     playSound(userChosenColor);
+    checkAnswer(userChosenColor.length - 1)
 }) 
 
 /** Plays sound based on button */
