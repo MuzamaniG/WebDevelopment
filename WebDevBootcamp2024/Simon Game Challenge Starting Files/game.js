@@ -1,5 +1,7 @@
 
+/** List of colors for each button */
 var buttonColors = ["red", "blue", "green", "yellow"];
+/** Pattern given by game */
 var gamePattern = [];
 var userClickedPattern = [];
 
