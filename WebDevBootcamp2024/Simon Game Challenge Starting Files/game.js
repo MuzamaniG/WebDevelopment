@@ -12,8 +12,8 @@ var started = false;
 
 $(document).on('keydown', function() {
     if (!started) {
-        nextSequence();
         started = true;
+        nextSequence();
     }
 })
 
@@ -24,18 +24,28 @@ function checkAnswer(currentLevel) {
     else {
         console.log("wrong");
     }
+    //Checks if the user has entered all necessary inputs
+    if (currentLevel == gamePattern.length - 1) {
+        
+    }
+    setTimeout(function() {
+        nextSequence();
+        userClickedPattern = [];
+    }, 1000)
 }
 
 /** Decides the next sequence */
 function nextSequence() {
+    level++;
+    $("#level-title").text("Level " + level);
+    
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColor = buttonColors[randomNumber]
     gamePattern.push(randomChosenColor);
 
     $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColor);
-    level++;
-    $("#level-title").text("Level " + level);
+
 }
 
 /** Click functionality for user */
