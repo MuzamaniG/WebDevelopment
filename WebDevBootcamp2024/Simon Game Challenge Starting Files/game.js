@@ -16,6 +16,8 @@ function startOver() {
     level = 0;
     gamePattern = [];
 }
+
+/** Way to start the game */
 $(document).on('keydown', function() {
     if (!started) {
         started = true;
@@ -42,6 +44,7 @@ function checkAnswer(currentLevel) {
             $("body").removeClass("game-over");
         }, 200);
         $("#level-title").text("Game Over, Press Any Key to Restart");
+        startOver();
     }
 }
 
