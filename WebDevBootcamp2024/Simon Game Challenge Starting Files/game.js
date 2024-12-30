@@ -10,6 +10,12 @@ var level = 0;
 /** Whether game has started */
 var started = false;
 
+/** Restarts the game */
+function startOver() {
+    started = false;
+    level = 0;
+    gamePattern = [];
+}
 $(document).on('keydown', function() {
     if (!started) {
         started = true;
@@ -29,12 +35,13 @@ function checkAnswer(currentLevel) {
     }
     else {
         console.log("wrong");
-        var wrongAudio = new Audio("./sounds/wrong.mp3")
+        var wrongAudio = new Audio("./sounds/wrong.mp3");
         wrongAudio.play();
         $("body").addClass("game-over");
         setTimeout(function() {
             $("body").removeClass("game-over");
-        }, 200)
+        }, 200);
+        $("#level-title").text("Game Over, Press Any Key to Restart");
     }
 }
 
@@ -74,8 +81,9 @@ function animatePress(currentColor) {
     setTimeout(function() {
         $("#" + currentColor).removeClass("pressed");
     }, 100)
-    
 }
+
+
 
 
 
