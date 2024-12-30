@@ -5,7 +5,17 @@ var buttonColors = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 /** Pattern given by user */
 var userClickedPattern = [];
+/** Game's level */
+var level = 0;
+/** Whether game has started */
+var started = false;
 
+$(document).on('keydown', function() {
+    if (!started) {
+        nextSequence();
+        started = true;
+    }
+})
 
 /** Decides the next sequence */
 function nextSequence() {
@@ -15,6 +25,8 @@ function nextSequence() {
 
     $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColor);
+    level++;
+    $("#level-title").text("Level " + level);
 }
 
 /** Click functionality for user */
