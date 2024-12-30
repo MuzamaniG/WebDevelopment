@@ -18,27 +18,26 @@ $(document).on('keydown', function() {
 })
 
 function checkAnswer(currentLevel) {
-    if (userClickedPattern[currentLevel] == gamePattern[currentLevel]) {
+    if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
         console.log("success");
+        //Checks if the user has entered all necessary inputs
+        if (userClickedPattern.length === gamePattern.length) {
+            setTimeout(function() {
+                nextSequence();
+            }, 1000)
+        }
     }
     else {
         console.log("wrong");
     }
-    //Checks if the user has entered all necessary inputs
-    if (currentLevel == gamePattern.length - 1) {
-        
-    }
-    setTimeout(function() {
-        nextSequence();
-        userClickedPattern = [];
-    }, 1000)
 }
 
 /** Decides the next sequence */
 function nextSequence() {
+    userClickedPattern = [];
     level++;
     $("#level-title").text("Level " + level);
-    
+
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColor = buttonColors[randomNumber]
     gamePattern.push(randomChosenColor);
@@ -54,7 +53,7 @@ $(".btn").click(function() {
     userClickedPattern.push(userChosenColor);
     animatePress(userChosenColor);
     playSound(userChosenColor);
-    checkAnswer(userChosenColor.length - 1)
+    checkAnswer(userClickedPattern.length - 1)
 }) 
 
 /** Plays sound based on button */
