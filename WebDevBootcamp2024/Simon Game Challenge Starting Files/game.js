@@ -11,15 +11,27 @@ function nextSequence() {
     gamePattern.push(randomChosenColor);
 
     $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
-    var audio = new Audio("./sounds/" + randomChosenColor + ".mp3");
+    playSound(randomChosenColor);
+}
+
+/** Click functionality for user */
+$(".btn").click(function() {
+    var userChosenColor = $(this).attr("id");
+    userClickedPattern.push(userChosenColor);
+    animatePress(userChosenColor);
+    playSound(userChosenColor);
+}) 
+
+/** Plays sound based on button */
+function playSound(name) {
+    var audio = new Audio("./sounds/" + name + ".mp3");
     audio.play();
 }
 
-$(".btn").click(function() {
-    var userChosenColor = this.attr("id");
-    userClickedPattern.push(userChosenColor);
-    console.log(userClickedPattern);
-}) 
+/** Animates button based on press */
+function animatePress(currentColor) {
+    $("#" + currentColor).classList.add("pressed");
+}
 
 
 
