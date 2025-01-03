@@ -1,4 +1,6 @@
-import generateName from "sillyname";
-var sillyName = generateName()
 
-console.log("I am " + sillyName);
+import randomSuperhero from "superheroes";
+
+const hero = randomSuperhero();
+
+console.log(`I'm ${hero} and I'm here to rescue you!`);
