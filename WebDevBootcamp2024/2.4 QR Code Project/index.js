@@ -8,10 +8,13 @@ import inquirer from 'inquirer';
 import qr from 'qr-image';
 
 inquirer
-  .prompt([
-    /* Pass your questions in here */
-  ])
+  .prompt([{
+        message: "Enter an image URL: ",
+        name: "URL"
+    
+    }])
   .then((answers) => {
+    console.log("Good so far");
     qr.image(answers);
   })
   .catch((error) => {
