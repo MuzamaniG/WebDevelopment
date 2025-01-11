@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
     let today = new Date(); 
 
     let day = today.getDay();
-    if (today > 5) {
+    if (today === 6 || today === 0) {
         day = "weekend, time to have fun!";;
     }
     else {
