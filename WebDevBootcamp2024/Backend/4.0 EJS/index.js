@@ -13,17 +13,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 app.get("/", (req, res) => { 
     
     let today = new Date(); 
-
+    let advice = "";
     let day = today.getDay();
-    if (today === 6 || today === 0) {
-        day = "weekend, time to have fun!";;
+    if (day == 6 || today === 0) {
+        advice = "weekend, time to have fun!";;
     }
     else {
-        day = "weekday, time to grind!";
+        advice = "weekday, time to grind!";
     } 
 
     res.render("index.ejs", {
-        dayAdvice: day
+        dayAdvice: advice
     }
         
     );
