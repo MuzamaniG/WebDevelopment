@@ -15,11 +15,11 @@ app.get("/", (req, res) => {
     let today = new Date(); 
 
     let day = today.getDay();
-    if (today < 5) {
+    if (today > 5) {
         day = "weekend, time to have fun!";;
     }
     else {
-        day = "week, time to grind!";
+        day = "weekday, time to grind!";
     } 
 
     res.render("index.ejs", {
