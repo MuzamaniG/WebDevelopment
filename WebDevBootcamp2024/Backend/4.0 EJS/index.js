@@ -24,9 +24,7 @@ app.get("/", (req, res) => {
 
     res.render("index.ejs", {
         dayAdvice: advice
-    }
-        
-    );
+    });
 });
 
 app.put(__dirname, () => {
