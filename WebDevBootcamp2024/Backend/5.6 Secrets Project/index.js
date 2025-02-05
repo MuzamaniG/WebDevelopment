@@ -10,10 +10,27 @@ const app = express();
 // 3. Use the public folder for static files.
 
 // 4. When the user goes to the home page it should render the index.ejs file.
-app.get("/", (req, res) => {
-    res.render("index.ejs");
+app.get("/", async (req, res) => {
+    try {
+        const randomSecret = await(axios.get("https://secrets-api.appbrewery.com/random"));
+        res.render("index.ejs", { 
+            secret: randomSecret.data.secret,
+            user: randomSecret.data.username
+        });
+    }
+    catch (error) {
+        console.log(error.response.data);
+        res.status(500);
+    }
+    
+    
 })
+
 // 5. Use axios to get a random secret and pass it to index.ejs to display the
 // secret and the username of the secret.
 
 // 6. Listen on your predefined port and start the server.
+
+app.listen(port, () => {
+    console.log(`Server running on port: ${port}`);
+});
