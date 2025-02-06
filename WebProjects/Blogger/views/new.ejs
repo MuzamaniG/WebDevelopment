@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create New Post</title>
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="mb-4">Create New Post</h1>
+    <form action="/posts" method="POST">
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <input
+          type="text"
+          class="form-control"
+          id="category"
+          name="category"
+          placeholder="e.g. Technology"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          placeholder="e.g. My Awesome Post"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="date"
+          name="date"
+          placeholder="e.g. Jan 25"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="excerpt" class="form-label">Excerpt</label>
+        <textarea
+          class="form-control"
+          id="excerpt"
+          name="excerpt"
+          rows="5"
+          placeholder="A short description..."
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Create Post</button>
+      <a href="/" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>

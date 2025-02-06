@@ -32,8 +32,7 @@ const links = [
 ];
 
 // -----------------------------------------------
-// In-memory "posts" array for the bottom cards:
-// (Matches the 6 cards in your HTML snippet.)
+// In-memory "posts" array for the bottom cards
 // -----------------------------------------------
 let posts = [
   {
@@ -90,8 +89,43 @@ let posts = [
 // HOME PAGE: Renders 'index.ejs' with links + posts
 // -----------------------------------------------
 app.get("/", (req, res) => {
-  // Pass both links and posts to the template
   res.render("index.ejs", { links, posts });
+});
+
+// -----------------------------------------------
+// NEW POST ROUTE: Show a form to create a new post
+// -----------------------------------------------
+app.get("/posts/new", (req, res) => {
+  res.render("new.ejs");
+});
+
+// -----------------------------------------------
+// CREATE POST ROUTE: Handle the form submission
+// -----------------------------------------------
+app.post("/posts", (req, res) => {
+  const { category, title, date, excerpt } = req.body;
+
+  // Create a unique ID based on max existing ID + 1
+  let maxId = 0;
+  posts.forEach((p) => {
+    if (p.id > maxId) maxId = p.id;
+  });
+  const newId = maxId + 1;
+
+  // Build the new post object
+  const newPost = {
+    id: newId,
+    category,
+    title,
+    date,
+    excerpt,
+  };
+
+  // Push to our in-memory array
+  posts.push(newPost);
+
+  // Redirect to home
+  res.redirect("/");
 });
 
 // -----------------------------------------------
