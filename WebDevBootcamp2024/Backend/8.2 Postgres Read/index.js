@@ -1,16 +1,42 @@
 import express from "express";
 import bodyParser from "body-parser";
+import pg from "pg";
+import dotenv from "dotenv";
 
 const app = express();
 const port = 3000;
 
+dotenv.config({path: './password.env'})
+
 let totalCorrect = 0;
+let quiz = {};
+let currentQuestion = {};
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-let currentQuestion = {};
+const db = new pg.Client({
+  port: 5432,
+  host: 'localhost',
+  password: process.env.PG_PASSWORD,
+  database: 'world',
+  user: 'postgres',
+});
+
+db.connect();
+
+db.query("SELECT * FROM flags", (err, res) => {
+  if (err) {
+    res.status(500);
+    console.log("Error processing database");
+  }
+  else {
+    quiz = res.rows;
+  }
+})
+
+
 
 // GET home page
 app.get("/", (req, res) => {
