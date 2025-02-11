@@ -9,8 +9,6 @@ const port = 3000;
 // Load the environment variables from "password.env
 dotenv.config({ path: './password.env' });
 
-console.log(process.env.PG_PASSWORD);
-
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
