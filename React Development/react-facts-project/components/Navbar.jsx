@@ -1,9 +1,9 @@
 export default function Navbar() {
     return (
         <header>
-            <nav className="nav-header">
+            <nav>
                 <img src="../src/assets/react.svg" alt="react" />
-                <h1>React Facts</h1>
+                <span>React Facts</span>
             </nav>
         </header>
     )

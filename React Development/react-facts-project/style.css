@@ -1,26 +1,32 @@
- {
 
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
 }
-
-.nav-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+header {
     background-color: rgba(33, 34, 42);
-    color: rgba(97, 218, 251);
-    height: 91px;
-
+    height: 90px;
+    padding: 30px 25px;
 }
 
-.nav-header > img {
+nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+nav > img {
     width: 40px;
     height: 28.93px;
-    align-self: center;
+    margin-left: 7px;
 }
 
-.nav-header > h1 {
-    align-self: center;
+nav > span {
+    color: #61DAFB;
+    font-size: 1.4rem;
+    font-weight: 700;
 }
+
 
 
 
