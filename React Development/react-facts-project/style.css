@@ -27,6 +27,11 @@ main > h1 {
     line-height: 19px;
 }
 
+.facts-list > li::marker {
+    color: #61DAFB;
+    font-size: 1.5rem;
+}
+
 header {
     background-color: rgba(33, 34, 42);
     height: 90px;
