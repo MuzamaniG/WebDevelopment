@@ -1,8 +1,21 @@
-
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     font-family: Inter, sans-serif;
+    background-color: #282D35;
+    color: white;
 }
+
+#main {
+    margin-left: 1.4rem;
+}
+
+#main > ul li {
+    margin-bottom: 10px;
+}
+
 header {
     background-color: rgba(33, 34, 42);
     height: 90px;
@@ -17,8 +30,7 @@ nav {
 
 nav > img {
     width: 40px;
-    height: 28.93px;
-    margin-left: 7px;
+    margin-right: 7px;
 }
 
 nav > span {
