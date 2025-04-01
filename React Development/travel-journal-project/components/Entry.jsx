@@ -20,10 +20,11 @@ export default function Entry() {
             <div className="entry-image">
                 <img src="https://scrimba.com/links/travel-journal-japan-image-url" alt="mount fuji" className="location-image"/>
             </div>
+
             <div className="entry">
 
                 <div className="country-header">
-                    <h2><img src="../src/assets/marker.png" alt="marker" className="icon"/>Japan</h2>
+                    <h2><img src="../src/assets/marker.png" alt="marker" className="icon"/>JAPAN</h2>
                 </div>
 
                 <div className="map">
