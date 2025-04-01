@@ -16,6 +16,7 @@ header > h1 {
     align-items: center;
     color: white;
     font-family: Inter;
+    font-weight: normal;
 }
 
 #globe-image {
