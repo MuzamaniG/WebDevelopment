@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-/* Start of header CSS */
+/* Start of Header CSS */
 header {
     background-color: rgb(245, 90, 90);
     height: 80px;
@@ -23,17 +23,26 @@ header > h1 {
     width: 30px;
     margin-right: 10px;
 }
-/* End of header css */
+/* End of Header CSS */
 
-/* Start of entry css */
+/* Start of Entry CSS */
 
-.entry {
-    margin-right: 25px;
+article {
+    display: flex;
+    height: 180px;
     margin-bottom: 50px;
+    margin-right: 25px;
+}
+.entry-image {
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.entry {
     font-family: Inter;
+    align-self: center;
 }
 
-.entry img {
+.icon {
     margin-right: 8px;
     width: 7px;
     height: 9.55px;
@@ -41,7 +50,7 @@ header > h1 {
 .country-header {
     display: inline-block;
     margin-right: 20px;
-    margin-left: 200px;
+
     font-size: 10.24px;
 }
 .map {
@@ -51,16 +60,23 @@ header > h1 {
 }
 
 .location {
-    margin-left: 200px;
+
     font-size: 20px;
 }
 
 .dates {
-    margin-left: 200px;
+
     font-size: 10.24px;
 }
 
 .description {
-    margin-left: 200px;
     font-size: 10.24px;
 }
+
+.location-image {
+    width: 125px;
+    height: 100%;
+    display: inline-block;
+}
+
+/* End of Entry CSS */
