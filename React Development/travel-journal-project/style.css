@@ -38,10 +38,15 @@ article {
     margin-bottom: 50px;
     margin-right: 25px;
 }
-.entry-image {
+.entry-image-container {
     margin-right: 20px;
     margin-left: 10px;
+    width: 125px;
+    height: 168px;
+    overflow: hidden;
+    flex-shrink: 0;
 }
+
 .entry {
     font-family: Inter;
     align-self: center;
@@ -59,12 +64,8 @@ article {
     font-size: 10.24px;
     padding: 0;
     height: 0px;
-}
-
-.country-header > h2 {
-    color: #2B283A;
     letter-spacing: 2px;
-    font-weight: normal;
+    color: #2B283A;
 }
 
 .map {
@@ -88,9 +89,8 @@ article {
 }
 
 .location-image {
-    width: 125px;
+    width: 100%;
     height: 100%;
-    display: inline-block;
 }
 
 /* End of Entry CSS */
