@@ -18,9 +18,10 @@ export default function App() {
       <Header/>
       <main className="container">
         <Entry
-          img={<img
-          src="https://scrimba.com/links/travel-journal-japan-image-url"
-          alt= "Mount Fuji"/>}
+          img= {{
+            src: "https://scrimba.com/links/travel-journal-japan-image-url",
+            alt: "Mount Fuji"
+          }}
           title="Mount Fuji"
           dates="12 Jan, 2021 - 24 Jan, 2021"
           country="Japan"

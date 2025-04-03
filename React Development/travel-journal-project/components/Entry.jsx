@@ -18,7 +18,11 @@ export default function Entry(props) {
     return (
         <article>
             <div className="entry-image-container">
-                <img src="https://scrimba.com/links/travel-journal-japan-image-url" alt="mount fuji" className="location-image"/>
+                <img
+                    className="location-image"
+                    src={props.img.src}
+                    alt={props.img.alt}
+                />
             </div>
 
             <div className="entry">
