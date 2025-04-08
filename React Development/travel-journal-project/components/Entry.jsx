@@ -20,22 +20,22 @@ export default function Entry(props) {
             <div className="entry-image-container">
                 <img
                     className="location-image"
-                    src={props.img.src}
-                    alt={props.img.alt}
+                    src={props.entry.img.src}
+                    alt={props.entry.img.alt}
                 />
             </div>
 
             <div className="entry">
                 <img src="../src/assets/marker.png" alt="marker" className="icon"/>
-                <span className="country-header">{props.country}</span>
+                <span className="country-header">{props.entry.country}</span>
 
-                <a href={props.googleMapsLink} className="map">View in Google Maps</a>
+                <a href={props.entry.googleMapsLink} className="map">View in Google Maps</a>
 
-                <h2 className="location">{props.title}</h2>
+                <h2 className="location">{props.entry.title}</h2>
 
-                <h2 className="dates">{props.dates}</h2>
+                <h2 className="dates">{props.entry.dates}</h2>
 
-                <p className="description">{props.text}</p>
+                <p className="description">{props.entry.text}</p>
             </div>
         </article>
     )
