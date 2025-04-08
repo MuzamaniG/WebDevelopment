@@ -49,7 +49,7 @@ article {
 
 .entry {
     font-family: Inter;
-    align-self: center;
+
 }
 
 .icon {
@@ -76,7 +76,7 @@ article {
 
 .location {
     font-size: 20px;
-    height: 50px;
+    height: default;
     color: #2B283A
 }
 
