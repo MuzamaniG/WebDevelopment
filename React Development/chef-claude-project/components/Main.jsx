@@ -45,9 +45,7 @@ export default function Main() {
             />
             : null}
             {/* placeholder recipe contents */}
-            {recipeShown &&
-                <ClaudeRecipe/>
-            }
+            {recipeShown && <ClaudeRecipe/>}
         </main>
 
     )
