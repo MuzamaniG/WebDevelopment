@@ -2,13 +2,17 @@
 import { useState } from "react";
 import ClaudeRecipe from "./ClaudeRecipe.jsx"
 import IngredientsList from "./IngredientsList.jsx"
+import { getRecipeFromMistral } from "../ai.js";
 
 export default function Main() {
+
 
     const [ingredients, setIngredients] = useState([]);
     const ingredientListItems = ingredients.map(ingredient =>
         <li key={ingredient}>{ingredient}</li>
     )
+
+    const [recipe, setRecipe] = useState(getRecipeFromMistral(ingredientListItems))
 
     // Adds ingredients given form data and ingredients array state
     function addIngredient(formData) {
@@ -24,6 +28,7 @@ export default function Main() {
         setRecipeShown(prevShown =>
             !prevShown
         )
+        setRecipe(setRecipe(getRecipeFromMistral(ingredientListItems)))
     }
 
     return (
@@ -45,7 +50,7 @@ export default function Main() {
             />
             : null}
             {/* placeholder recipe contents */}
-            {recipeShown && <ClaudeRecipe/>}
+            {recipeShown && <ClaudeRecipe recipe={recipe}/>}
         </main>
 
     )
