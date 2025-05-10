@@ -17,8 +17,7 @@ export default function Main() {
                     <Dice />
                     <Dice />
                     <Dice />
-                    <Dice />
-                    <Dice />
+                    <button id="roll-button">Roll</button>
                 </main>
 
             </div>
