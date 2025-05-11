@@ -1,23 +1,36 @@
 import Header from "../components/Header.jsx"
-import Dice from "../components/Dice.jsx"
+import Die from "../components/Die.jsx"
+import { useState } from "react"
 
 export default function Main() {
+
+    function generateAllNewDice() {
+        const diceArray = [];
+        for (let i = 0; i < 10; i++) {
+          let rand = Math.ceil(Math.random() * 6);
+          let newDie = <Die value={rand} />
+          diceArray.push(newDie)
+        }
+        return diceArray;
+    }
+
+    const [dice, setDice] = useState(generateAllNewDice())
+    console.log(dice)
+
+
+
+    function rollDice() {
+        setDice(generateAllNewDice)
+    }
     return (
         <div className="box">
             <div className="container">
                 <main>
                     <Header/>
-                    <Dice />
-                    <Dice />
-                    <Dice />
-                    <Dice />
-                    <Dice />
-                    <Dice />
-                    <Dice />
-                    <Dice />
-                    <Dice />
-                    <Dice />
-                    <button id="roll-button">Roll</button>
+                    <div className="dice">
+                        {dice}
+                    </div>
+                    <button id="roll-button" onClick={rollDice}>Roll</button>
                 </main>
 
             </div>
