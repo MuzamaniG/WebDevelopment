@@ -8,7 +8,7 @@ export default function Main() {
         const diceArray = [];
         for (let i = 0; i < 10; i++) {
           let rand = Math.ceil(Math.random() * 6);
-          let newDie = <Die value={rand} />
+          let newDie = {value: rand, isHeld: false}
           diceArray.push(newDie)
         }
         return diceArray;
@@ -17,7 +17,7 @@ export default function Main() {
     const [dice, setDice] = useState(generateAllNewDice())
     console.log(dice)
 
-
+    const diceElements = dice.map(die => <Die value={die.value} />)
 
     function rollDice() {
         setDice(generateAllNewDice)
@@ -28,7 +28,7 @@ export default function Main() {
                 <main>
                     <Header/>
                     <div className="dice">
-                        {dice}
+                        {diceElements}
                     </div>
                     <button id="roll-button" onClick={rollDice}>Roll</button>
                 </main>
