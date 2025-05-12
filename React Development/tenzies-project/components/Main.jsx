@@ -23,7 +23,9 @@ export default function Main() {
     const diceElements = dice.map(die => <Die key={die.id} value={die.value} isHeld={die.isHeld} onClick={() => hold(die.id)}/>)
 
     function rollDice() {
-        setDice(generateAllNewDice)
+        setDice(prevDice => dice.map(die => {
+            return die.isHeld === false ? {...die, value: Math.ceil(Math.random() * 6)} : die
+        }))
     }
 
     function hold(id) {
