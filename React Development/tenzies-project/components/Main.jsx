@@ -18,7 +18,9 @@ export default function Main() {
 
     const [dice, setDice] = useState(generateAllNewDice())
 
-    console.log(dice)
+    const gameWon = dice.every(die => die.isHeld) &&
+        dice.every(die => die.value === dice[0].value)
+
 
     const diceElements = dice.map(die => <Die key={die.id} value={die.value} isHeld={die.isHeld} onClick={() => hold(die.id)}/>)
 
@@ -42,7 +44,7 @@ export default function Main() {
                     <div className="dice">
                         {diceElements}
                     </div>
-                    <button id="roll-button" onClick={rollDice}>Roll</button>
+                    <button id="roll-button" onClick={rollDice}>{gameWon ? 'New Game' : 'Roll'}</button>
                 </main>
 
             </div>
