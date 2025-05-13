@@ -3,9 +3,13 @@ import Header from "../components/Header.jsx"
 import Die from "../components/Die.jsx"
 import { useState } from "react"
 import { nanoid } from "nanoid"
+import Confetti from 'react-confetti'
+import { useWindowSize } from 'react-use'
 
 
 export default function App() {
+
+  const { width, height } = useWindowSize()
 
   function generateAllNewDice() {
     const diceArray = [];
@@ -45,6 +49,7 @@ export default function App() {
             {diceElements}
           </div>
           <button id="roll-button" onClick={rollDice}>{gameWon ? 'New Game' : 'Roll'}</button>
+          {gameWon ? <Confetti width={width} height={height}/> : null}
         </main>
       </div>
     </div>
