@@ -12,7 +12,13 @@ export default function Main() {
         <li key={ingredient}>{ingredient}</li>
     )
 
-    const [recipe, setRecipe] = useState(getRecipeFromMistral(ingredientListItems))
+    const [recipe, setRecipe] = useState("")
+
+    async function getRecipe() {
+        const recipeMarkdown = await getRecipeFromMistral(ingredients)
+        console.log(recipe)
+        setRecipe(recipeMarkdown)
+    }
 
     // Adds ingredients given form data and ingredients array state
     function addIngredient(formData) {
@@ -20,15 +26,6 @@ export default function Main() {
         setIngredients(prevIngredients =>
             [...prevIngredients, newIngredient]
         )
-    }
-
-    const [recipeShown, setRecipeShown] = useState(false)
-
-    function getRecipe() {
-        setRecipeShown(prevShown =>
-            !prevShown
-        )
-        setRecipe(setRecipe(getRecipeFromMistral(ingredientListItems)))
     }
 
     return (
@@ -45,12 +42,12 @@ export default function Main() {
             {ingredients.length > 0 ?
             <IngredientsList
                 listItems={ingredientListItems}
-                returnRecipe={getRecipe}
+                getRecipe={getRecipe}
                 numIngredients={ingredients.length}
             />
             : null}
             {/* placeholder recipe contents */}
-            {recipeShown && <ClaudeRecipe recipe={recipe}/>}
+            {recipe && <ClaudeRecipe recipe={recipe}/>}
         </main>
 
     )
