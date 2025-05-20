@@ -16,8 +16,7 @@ export default function App() {
   function generateAllNewDice() {
     const diceArray = [];
     for (let i = 0; i < 10; i++) {
-      let rand = //Math.ceil(Math.random() * 6);
-      5
+      let rand = Math.ceil(Math.random() * 6);
       let newDie = {value: rand, isHeld: false, id: nanoid()}
       diceArray.push(newDie)
     }
